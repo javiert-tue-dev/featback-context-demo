@@ -4,7 +4,11 @@ A seven-slide, clickable classroom mock-up. It follows fictional Alex through th
 
 ## Run it locally
 
-Requires Node.js 22.13 or later. No API key or FEATBACK account is needed: every screen uses fictional, scripted content and works offline after dependencies are installed.
+1. Accept the invitation to this private GitHub repository. Install [Node.js](https://nodejs.org/en/download) version **22.13 or later** if needed. Node.js includes `npm`. You can check your installation in a terminal with `node --version` and `npm --version`.
+2. Clone the repository, or download its ZIP from GitHub and open a terminal in the extracted folder.
+3. From the repository folder, run `npm ci` once to download the packages listed in `package-lock.json`. Then run `npm run dev` to start the demo.
+
+**No Python virtual environment (`venv`) or Python packages are needed.** The demo uses Node.js. Installing the npm packages requires an internet connection; the demo itself uses fictional, scripted content and needs no API key or FEATBACK account.
 
 ```bash
 git clone https://github.com/javiert-tue-dev/featback-context-demo.git
@@ -13,7 +17,9 @@ npm ci
 npm run dev
 ```
 
-The repository is private, so first accept the GitHub invitation from its owner. Open the address printed by the server, normally `http://localhost:3000/`. Use **Next step** and **Back**, or the left and right arrow keys. On the weekly-question slide, use its **Next** and **Previous** buttons to move through the four photographed questions. The text of both feedback messages is selectable and can be scrolled. **Reset Alex** restores the provided scenario.
+If you downloaded a ZIP, skip the `git clone` command and open a terminal in the extracted `featback-context-demo` folder before running `npm ci`. Open the address printed by the server, normally `http://localhost:3000/`. Stop the server with `Ctrl+C`. On later runs, start it again with `npm run dev`; you do not need to repeat `npm ci` unless the dependencies change.
+
+Use **Next step** and **Back**, or the left and right arrow keys. On the weekly-question slide, use its **Next** and **Previous** buttons to move through the four photographed questions. The text of both feedback messages is selectable and can be scrolled. **Reset Alex** restores the provided scenario.
 
 This is a classroom mock-up, not a live FEATBACK service. Do not enter real participant responses. The answer fields are prefilled with the fictional Alex scenario, and nothing is sent to a model or saved by the app.
 
