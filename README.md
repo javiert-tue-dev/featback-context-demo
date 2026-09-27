@@ -7,11 +7,13 @@ A seven-slide, clickable classroom mock-up. It follows fictional Alex through th
 Requires Node.js 22.13 or later. No API key or FEATBACK account is needed: every screen uses fictional, scripted content and works offline after dependencies are installed.
 
 ```bash
+git clone https://github.com/javiert-tue-dev/featback-context-demo.git
+cd featback-context-demo
 npm ci
 npm run dev
 ```
 
-If you cloned the repository, run these commands from its root. Open the address printed by the server, normally `http://localhost:3000/`. Use **Next step** and **Back**, or the left and right arrow keys. On the weekly-question slide, use its **Next** and **Previous** buttons to move through the four photographed questions. The text of both feedback messages is selectable and can be scrolled. **Reset Alex** restores the provided scenario.
+The repository is private, so first accept the GitHub invitation from its owner. Open the address printed by the server, normally `http://localhost:3000/`. Use **Next step** and **Back**, or the left and right arrow keys. On the weekly-question slide, use its **Next** and **Previous** buttons to move through the four photographed questions. The text of both feedback messages is selectable and can be scrolled. **Reset Alex** restores the provided scenario.
 
 This is a classroom mock-up, not a live FEATBACK service. Do not enter real participant responses. The answer fields are prefilled with the fictional Alex scenario, and nothing is sent to a model or saved by the app.
 
