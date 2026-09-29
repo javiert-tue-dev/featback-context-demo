@@ -33,6 +33,8 @@ Suggested narration:
 
 ## Important review point
 
+The message itself addresses Alex directly. Clinical-review reasoning belongs to the presenter warning and expandable explanation, rather than the participant-facing feedback.
+
 Alex explicitly says that waiting before eating felt like ignoring hunger. Repeating the delay task with a short clarification would not resolve that conflict. The draft therefore holds that task and its progression for review, while acknowledging Alex’s experience and preferred support. It does not prescribe a replacement intervention, recommend exercise, or claim that Alex said music helped. This is a visible exception to preserving the source task, not a clinically approved alternative. Choosing to view the standard text on the comparison slide does not resolve the same concern in that text.
 
 The mock-up does not implement detection, alerts or a review queue. [NICE NG69](https://www.nice.org.uk/guidance/ng69/chapter/recommendations) discusses regular eating in treatment for binge eating and bulimia nervosa; that guidance does not validate either draft or establish what FEATBACK should tell a particular participant. Neither the message nor the mock Jev grades establish clinical safety, benefit, or adherence.

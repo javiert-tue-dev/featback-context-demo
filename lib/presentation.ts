@@ -62,9 +62,9 @@ export const ORIGINAL_FEEDBACK = [
 // with the reported experience. This is unapproved, not a live model response.
 export const PERSONALIZED_FEEDBACK = [
   'We are concerned about your eating problems. Last week you worried about food and your body, ate less than recommended every day, and reported more days with binge eating and compensatory behaviours. That’s no small thing to deal with, especially during a week with deadlines and more evenings alone.',
-  'Stress, tension and difficult emotions can play a part in the urge to binge. A binge can temporarily muffle or dampen those feelings without resolving them; they may return afterwards, and you may feel worse. You described a week with deadlines and evenings alone, but also avoiding lunch in a crowded cafeteria and arriving home hungry and overwhelmed. We cannot assume that stress alone explains that experience.',
-  'You said that trying to wait before eating felt like ignoring your hunger. That concern needs clinical review before the ten-minute delay task is suggested again or extended. For support, you could text your sister, which you said helps you feel less alone. You also said that eating with your housemate felt easier, and that asking to eat together is something you could try.',
-  'We are interested in what feels manageable for you this week. Let us know what helps and what feels difficult or unhelpful, so that your experience can guide the review of the feedback. Thank you for sharing what the earlier suggestion felt like for you.',
+  'Stress, tension and difficult emotions can play a part in the urge to binge. A binge can temporarily muffle or dampen those feelings without resolving them; they may return afterwards, and you may feel worse. You described arriving home hungry and overwhelmed after avoiding lunch in the crowded cafeteria, during a week of deadlines and evenings alone.',
+  'You said that trying to wait before eating felt like ignoring your hunger. Thank you for telling us how that felt. For support this week, you could text your sister, since you said that helps you feel less alone. You also mentioned that eating with your housemate felt easier last week. Asking to eat together again is one option you already identified.',
+  'Choose what feels manageable for you this week. We would like to hear how it goes, including what helps and what feels difficult or unhelpful. Thank you for sharing your experience.',
 ] as const;
 
 export const ADAPTATIONS = [
