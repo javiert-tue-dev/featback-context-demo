@@ -170,6 +170,7 @@ a { color: inherit; text-underline-offset: 3px; }
 .rubric-details p { margin: 12px 0 6px; }
 .rubric-details ol { margin: 0; padding-left: 23px; }
 .rubric-details li { padding: 2px 0; }
+.review-case { margin-top: 18px; }
 .example-label { display: inline-block; margin: 0; padding: 9px 13px; background: #f8dec9; border-left: 4px solid var(--coral); font-size: 12px; font-weight: 700; }
 .result-table-wrap { overflow-x: auto; }
 .result-table-wrap table { border-collapse: collapse; width: 100%; min-width: 760px; background: #fff9f2; }
