@@ -5,8 +5,8 @@ import { Activity, ArrowLeft, ArrowRight, CircleHelp, CloudRain, RotateCcw, Uten
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import {
-  ADAPTATIONS, CONTEXT_FIT_RUBRIC, CONTEXT_QUESTIONS, FEEDBACK_SECTIONS, ORIGINAL_FEEDBACK,
-  PERSONALIZED_FEEDBACK, QUALITY_CRITERIA, QUESTION_OPTIONS, REVIEW_CASE, SAFETY_QUESTIONS, SLIDE_TITLES,
+  ADAPTATIONS, ADVICE_REVIEW, CONTEXT_FIT_RUBRIC, CONTEXT_QUESTIONS, FEEDBACK_SECTIONS, ORIGINAL_FEEDBACK,
+  PERSONALIZED_FEEDBACK, QUALITY_CRITERIA, QUESTION_OPTIONS, SAFETY_QUESTIONS, SLIDE_TITLES,
   STRUCTURED_QUESTIONS,
 } from '@/lib/presentation';
 
@@ -125,7 +125,7 @@ export default function Home() {
         </section>}
 
         {slide === 2 && <section className="content-slide" aria-labelledby="slide-title">
-          <div className="slide-intro"><span className="eyebrow">02 / Proposed optional step</span><h1 id="slide-title">What Alex shares</h1><p>Three short open-ended questions add context that the four weekly answers cannot show. This fictional example focuses on deadlines, evenings alone and familiar support. Alex may skip any question.</p></div>
+          <div className="slide-intro"><span className="eyebrow">02 / Proposed optional step</span><h1 id="slide-title">What Alex shares</h1><p>Three short open-ended questions add context that the four weekly answers cannot show. Alex describes a difficult eating moment, what changed this week and how earlier advice felt. Alex may skip any question.</p></div>
           <div className="context-list">{CONTEXT_QUESTIONS.map((item, index) => <div className="context-row" key={item.question}><div className="context-label"><span className="question-number">0{index + 1}</span><label htmlFor={`context-${index}`}>{item.question}</label></div><div className="context-answer"><Textarea id={`context-${index}`} value={context[index]} onChange={(event) => setContext((previous) => previous.map((value, position) => position === index ? event.target.value : value))} className="feat-textarea" /><button type="button" className="text-action" onClick={() => setContext((previous) => previous.map((value, position) => position === index ? '' : value))}>Skip this question</button></div></div>)}</div>
           <p className="quiet-note">The AI role proposed by the group is to extract only relevant context from optional answers, then use it to draft feedback for review. No answer is sent to a model in this demonstration.</p>
           {edited && <p className="stale-note">This is now an edited scenario. Later scripted feedback is still Alex’s original example and will be marked as unmatched.</p>}
@@ -139,16 +139,16 @@ export default function Home() {
         </section>}
 
         {slide === 4 && <section className="content-slide message-slide" aria-labelledby="slide-title">
-          <div className="slide-intro"><span className="eyebrow">04 / Intended output example</span><h1 id="slide-title">Proposed personalized feedback</h1><p>The original explanation, ten-minute task and gradual progression remain. Alex’s context shapes the examples and encouragement. This AI-generated example was prepared for the demo; no model runs during the walkthrough.</p></div>
-          <p className="review-warning">For clinical review: preserving the source does not establish suitability. The wording, including the clarification about hunger, still needs review. The weekly answers continue to report eating less than recommended.</p>
+          <div className="slide-intro"><span className="eyebrow">04 / Intended output example</span><h1 id="slide-title">Proposed personalized feedback</h1><p>The four sections remain. Alex’s original answers shape the explanation and support options, and flag the delay task for review. This AI-generated example was prepared for the demo; no model runs during the walkthrough.</p></div>
+          <p className="review-warning">Review needed: Alex says waiting felt like ignoring hunger. The draft holds the delay task and its progression for clinical review; it does not establish that the original task is suitable.</p>
           {edited && <p className="stale-note">The script below belongs to Alex’s original answers and no longer matches the edited scenario. Reset Alex for the planned comparison.</p>}
           <Message paragraphs={PERSONALIZED_FEEDBACK} label="Complete scripted personalized feedback for Alex" aiGenerated />
-          <details className="rubric-details review-case"><summary>Discussion example: when personalization should pause</summary><p>A separate fictional variation, retained from the earlier Alex scenario:</p>{REVIEW_CASE.answers.map((answer, index) => <p key={answer}><strong>Optional answer {index + 1}:</strong> “{answer}”</p>)}<p><strong>Why this needs review:</strong> {REVIEW_CASE.reason}</p><p><strong>Intended response:</strong> {REVIEW_CASE.response}</p><p>This panel illustrates a proposed review rule. The mock-up does not detect concerns, send an alert or arrange a review.</p></details>
+          <details className="rubric-details review-case"><summary>Why Alex’s answers require review of the task</summary><p><strong>Why this needs review:</strong> {ADVICE_REVIEW.reason}</p><p><strong>Intended response:</strong> {ADVICE_REVIEW.response}</p><p>This panel explains the proposed response to the same Alex scenario. The mock-up does not detect concerns, send an alert or arrange a review.</p></details>
         </section>}
 
         {slide === 5 && <section className="content-slide comparison-slide" aria-labelledby="slide-title">
           <div className="slide-intro"><span className="eyebrow">05 / User agency</span><h1 id="slide-title">Alex can push back</h1><p>The side-by-side view is for this classroom discussion. In the intended interface, Alex sees the reviewed feedback, can flag wording that feels wrong, and can choose the standard message. A reaction is a review signal, not a model grade or automatic retraining.</p></div>
-          <p className="comparison-disclosure">Presenter comparison · both feedback examples are illustrative and unapproved for use</p>
+          <p className="comparison-disclosure">Presenter comparison · both feedback examples are illustrative and unapproved for use. Viewing the standard version does not clear the concern about its delay task.</p>
           <div className="comparison-columns"><div className="comparison-column"><span className="column-label">Standard example</span>{!edited && displayOriginal && <span className="display-badge">Alex chose this version</span>}<p>{ORIGINAL_FEEDBACK[0]}</p><button type="button" className="text-action" onClick={() => setSlide(3)}>Read full message</button></div><div className="comparison-column"><span className="column-label">Contextual draft</span>{!edited && !displayOriginal && <span className="display-badge">Shown in this mock-up</span>}<p>{PERSONALIZED_FEEDBACK[0]}</p><button type="button" className="text-action" onClick={() => setSlide(4)}>Read full message</button></div></div>
           <button type="button" className="details-toggle" onClick={() => setShowDetails(!showDetails)} aria-expanded={showDetails}>{showDetails ? 'Hide' : 'Show'} which answers shaped the draft <span>{showDetails ? '−' : '+'}</span></button>
           {showDetails && <div className="adaptation-list">{ADAPTATIONS.map(([input, use]) => <div key={input}><strong>{input}</strong><span>{use}</span></div>)}</div>}

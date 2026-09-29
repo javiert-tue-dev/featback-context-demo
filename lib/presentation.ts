@@ -37,15 +37,15 @@ export const FEEDBACK_SECTIONS = [
 export const CONTEXT_QUESTIONS = [
   {
     question: 'Thinking about a difficult moment with eating this week, what was happening before and afterwards?',
-    answer: 'One evening after working on a deadline, I felt tense and overwhelmed. Later, eating felt out of control. Afterwards I felt upset and had an urge to make up for what I had eaten.',
+    answer: 'I avoided lunch because the cafeteria was crowded and I felt people would watch me eat. When I got home, I was really hungry and overwhelmed. Eating felt out of control, and afterwards I felt guilty and exercised to make up for it.',
   },
   {
     question: 'What was different this week, if anything, that made things harder or easier?',
-    answer: 'I had several deadlines and my housemate was away. Evenings felt harder on my own. Having someone to talk to usually makes those evenings feel less lonely.',
+    answer: 'I had several deadlines and my housemate was away. Evenings were harder on my own. Last week we sometimes ate together, and that felt easier.',
   },
   {
     question: 'What have you already tried, and what kind of support would feel manageable right now?',
-    answer: 'Texting my sister helps me feel less alone, and listening to my favourite music helps me through tense moments. Those feel manageable. A big challenge would feel like another thing to fail.',
+    answer: 'Trying to wait before eating made me feel like I should keep ignoring my hunger. Texting my sister helps me feel less alone. I could ask my housemate to eat with me, but a big challenge would feel like another thing to fail.',
   },
 ] as const;
 
@@ -57,32 +57,28 @@ export const ORIGINAL_FEEDBACK = [
   'Will you rise to the challenge? We are very curious to see what will happen when you learn to delay your harmful eating behaviors and whether this will help you. Good luck!',
 ] as const;
 
-// Scripted adaptation: preserve the source rationale, ten-minute task and gradual
-// progression; personalize context, examples and encouragement. Unapproved copy.
+// Prepared AI-generated example based on Alex's original reflection. Preserve the
+// source's general explanation; flag the delay task for review when it conflicts
+// with the reported experience. This is unapproved, not a live model response.
 export const PERSONALIZED_FEEDBACK = [
   'We are concerned about your eating problems. Last week you worried about food and your body, ate less than recommended every day, and reported more days with binge eating and compensatory behaviours. That’s no small thing to deal with, especially during a week with deadlines and more evenings alone.',
-  'The urge to binge can emerge from stress, tension and/or emotions that suddenly occur. You described feeling tense and overwhelmed after working on a deadline. Do you recognise a connection between those feelings and the urge? A binge can temporarily muffle or dampen difficult feelings without resolving them. Those tensions and emotions may return afterwards, and you may feel worse after a binge.',
-  'Next time you feel an urge to binge or compensate for eating, try to delay acting on that urge for about 10 minutes. The idea is that, after a while, the urge may feel less pressing. This does not mean delaying a meal or ignoring hunger. Think about an activity that could make those 10 minutes more bearable. You could text your sister, since you said that helps you feel less alone, or put on your favourite music. If you manage the 10-minute delay, notice what happened to the urge. As you practise, you can gradually extend the time if that feels manageable.',
-  'We are curious to hear how this goes for you during the coming week and whether it helps. Let us know what you notice, including if the task feels difficult or unhelpful. Good luck!',
+  'Stress, tension and difficult emotions can play a part in the urge to binge. A binge can temporarily muffle or dampen those feelings without resolving them; they may return afterwards, and you may feel worse. You described a week with deadlines and evenings alone, but also avoiding lunch in a crowded cafeteria and arriving home hungry and overwhelmed. We cannot assume that stress alone explains that experience.',
+  'You said that trying to wait before eating felt like ignoring your hunger. That concern needs clinical review before the ten-minute delay task is suggested again or extended. For support, you could text your sister, which you said helps you feel less alone. You also said that eating with your housemate felt easier, and that asking to eat together is something you could try.',
+  'We are interested in what feels manageable for you this week. Let us know what helps and what feels difficult or unhelpful, so that your experience can guide the review of the feedback. Thank you for sharing what the earlier suggestion felt like for you.',
 ] as const;
 
 export const ADAPTATIONS = [
   ['Deadlines and evenings alone', 'Acknowledges the circumstances alongside the same symptom summary'],
-  ['Tense and overwhelmed after a deadline', 'Connects the existing explanation to a reported moment without asserting its cause'],
-  ['Sister and favourite music help', 'Makes the original contact/music examples specific to Alex'],
-  ['Big challenges feel pressuring', 'Keeps gradual progression and invites honest feedback without a challenge to pass'],
+  ['Avoided lunch; arrived home hungry and overwhelmed', 'Acknowledges the reported sequence without assuming that stress caused it'],
+  ['Waiting felt like ignoring hunger', 'Flags the delay task and its progression for clinical review'],
+  ['Texting sister helps; eating with housemate felt easier', 'Uses support options Alex already identified'],
+  ['Exercise used to compensate; challenges feel pressuring', 'Omits exercise examples and invites feedback without a performance challenge'],
 ] as const;
 
-// Separate fictional variation, retained from the earlier scenario for discussion.
-// The prototype displays the intended review response; it does not detect or queue cases.
-export const REVIEW_CASE = {
-  answers: [
-    'I avoided lunch because the cafeteria was crowded and I felt people would watch me eat. When I got home, I was really hungry and overwhelmed. Eating felt out of control, and afterwards I felt guilty and exercised to make up for it.',
-    'I had several deadlines and my housemate was away. Evenings were harder on my own. Last week we sometimes ate together, and that felt easier.',
-    'Trying to wait before eating made me feel like I should keep ignoring my hunger. Texting my sister helps me feel less alone. I could ask my housemate to eat with me, but a big challenge would feel like another thing to fail.',
-  ],
+// Review rationale for this same Alex scenario; no automatic detection or queue.
+export const ADVICE_REVIEW = {
   reason: 'This reflection questions whether the delay task fits Alex’s situation. Repeating it with a short clarification would leave that conflict unresolved.',
-  response: 'Pause personalization and flag the task’s suitability for clinical review. Do not generate a revised clinical task or automatically present the same delay advice as the fallback.',
+  response: 'Hold the delay task and its progression for clinical review. The draft acknowledges Alex’s context and preferred support, but does not choose a replacement clinical intervention. Access to the original text is for comparison, not approval to follow it.',
 } as const;
 
 export const QUALITY_CRITERIA = [
