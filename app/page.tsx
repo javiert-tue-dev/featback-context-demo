@@ -15,9 +15,9 @@ const QUESTION_ICONS = [CircleHelp, Utensils, CloudRain, Activity] as const;
 const EXAMPLE_GRADES = [3, 3, 4, 4, 4, 3, 4] as const;
 const EXAMPLE_CONFIDENCES = [0.61, 0.52, 0.46, 0.68, 0.74, 0.81, 0.57] as const;
 
-function Message({ paragraphs, label }: { paragraphs: readonly string[]; label: string }) {
+function Message({ paragraphs, label, aiGenerated = false }: { paragraphs: readonly string[]; label: string; aiGenerated?: boolean }) {
   return <>
-    <p className="feedback-provenance">Illustrative classroom feedback · unapproved for use</p>
+    <p className="feedback-provenance">{aiGenerated && 'AI-generated · '}Illustrative classroom feedback · unapproved for use</p>
     <div className="message-sheet" aria-label={label}>
       {paragraphs.map((paragraph, index) => <div className="message-section" key={index}>
         <span className="message-section-label">{FEEDBACK_SECTIONS[index]}</span>
@@ -139,10 +139,10 @@ export default function Home() {
         </section>}
 
         {slide === 4 && <section className="content-slide message-slide" aria-labelledby="slide-title">
-          <div className="slide-intro"><span className="eyebrow">04 / Intended output example</span><h1 id="slide-title">Proposed personalized feedback</h1><p>The original explanation, ten-minute task and gradual progression remain. Alex’s context shapes the examples and encouragement. This is a scripted proposal, not a recorded model run.</p></div>
+          <div className="slide-intro"><span className="eyebrow">04 / Intended output example</span><h1 id="slide-title">Proposed personalized feedback</h1><p>The original explanation, ten-minute task and gradual progression remain. Alex’s context shapes the examples and encouragement. This AI-generated example was prepared for the demo; no model runs during the walkthrough.</p></div>
           <p className="review-warning">For clinical review: preserving the source does not establish suitability. The wording, including the clarification about hunger, still needs review. The weekly answers continue to report eating less than recommended.</p>
           {edited && <p className="stale-note">The script below belongs to Alex’s original answers and no longer matches the edited scenario. Reset Alex for the planned comparison.</p>}
-          <Message paragraphs={PERSONALIZED_FEEDBACK} label="Complete scripted personalized feedback for Alex" />
+          <Message paragraphs={PERSONALIZED_FEEDBACK} label="Complete scripted personalized feedback for Alex" aiGenerated />
           <details className="rubric-details review-case"><summary>Discussion example: when personalization should pause</summary><p>A separate fictional variation, retained from the earlier Alex scenario:</p>{REVIEW_CASE.answers.map((answer, index) => <p key={answer}><strong>Optional answer {index + 1}:</strong> “{answer}”</p>)}<p><strong>Why this needs review:</strong> {REVIEW_CASE.reason}</p><p><strong>Intended response:</strong> {REVIEW_CASE.response}</p><p>This panel illustrates a proposed review rule. The mock-up does not detect concerns, send an alert or arrange a review.</p></details>
         </section>}
 
